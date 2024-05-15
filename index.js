@@ -4,7 +4,9 @@ const cors=require('cors')
 const mongoDB=require('./db');
 require('dotenv').config();
 mongoDB();
-app.use(cors());
+app.use(cors({
+  origin: 'https://eatpleasee.netlify.app'
+}));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://eatpleasee.netlify.app/");
   res.header(
